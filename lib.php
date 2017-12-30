@@ -62,7 +62,7 @@ function block_class_schedule_get_group_members_role($roleid, $groupid, $coursei
 
     return $DB->get_records_sql($sql, array($groupid, CONTEXT_COURSE, $courseid, $roleid, 0));
 }
-function block_class_schedule_user_profile_link($user) {
-    $url = new moodle_url('/user/profile.php', array('id' => $user->id));
+function block_class_schedule_user_profile_link($user, $courseid) {
+    $url = new moodle_url('/user/view.php', array('id' => $user->id, 'course' => $courseid));
     return html_writer::link($url, fullname($user));
 }

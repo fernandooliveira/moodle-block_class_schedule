@@ -161,7 +161,7 @@ class block_class_schedule extends block_list {
                     $group->id, $this->page->course->id)) {
                     $fullnames = [];
                     foreach ($role1members as $role1member) {
-                        $fullnames[] = block_class_schedule_user_profile_link($role1member);
+                        $fullnames[] = block_class_schedule_user_profile_link($role1member, $this->page->course->id);
                     }
                     $this->content->icons[] = $spacer;
                     $this->content->items[] = $usericon.html_writer::div($sitesetting->role1name.': ', 'item-label').
@@ -173,7 +173,7 @@ class block_class_schedule extends block_list {
                     $group->id, $this->page->course->id)) {
                     $fullnames = [];
                     foreach ($role2members as $role2member) {
-                        $fullnames[] = block_class_schedule_user_profile_link($role2member);
+                        $fullnames[] = block_class_schedule_user_profile_link($role2member, $this->page->course->id);
                     }
                     $this->content->icons[] = $spacer;
                     $this->content->items[] = $usericon.html_writer::div($sitesetting->role2name.': ', 'item-label').
