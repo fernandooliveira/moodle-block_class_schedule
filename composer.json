@@ -1,11 +1,11 @@
 {
-    "name": "danielneis/moodle-block_class_schedule",
-    "description": "A block template for Moodle based on http://docs.moodle.org/dev/Blocks",
+    "name": "fernandooliveira/moodle-block_class_schedule",
+    "description": "Live Class Schedule",
     "license": "GPLv3",
     "authors": [
         {
-            "name": "Daniel Neis Araujo",
-            "email": "danielneis@gmail.com"
+            "name": "Michael Gardener",
+            "email": "mgardener@cissq.com"
         }
     ],
     "type": "moodle-block",
@@ -13,6 +13,6 @@
       "composer/installers": "~1.0"
     },
     "extra": {
-      "installer-name": "newblock"
+      "installer-name": "class_schedule"
     }
 }
