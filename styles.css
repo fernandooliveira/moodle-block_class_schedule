@@ -1,0 +1,24 @@
+.block_class_schedule .item-label {
+    float: left;
+}
+.block_class_schedule .item-text {
+    float: left;
+    margin-left: 5px;
+}
+.block_class_schedule .icon.column.c0 {
+    float: left;
+}
+.block_class_schedule .live-class-iframe {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.block_class_schedule #groupselectionform {
+    float: right;
+}
+.block_class_schedule.block.list_block .unlist > li > .column {
+    display: block;
+    overflow: hidden;
+}
+.block_class_schedule .icon-inner {
+    float: left;
+}
