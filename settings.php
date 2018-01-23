@@ -86,3 +86,13 @@ $settings->add(
         PARAM_URL
     )
 );
+
+$settings->add(
+    new admin_setting_configtext(
+        'block_class_schedule/groupsstartwith',
+        get_string('groupsstartwith', 'block_class_schedule'),
+        '',
+        '',
+        PARAM_TEXT
+    )
+);

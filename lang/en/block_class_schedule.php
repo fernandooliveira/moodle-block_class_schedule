@@ -36,3 +36,4 @@ $string['iframedesc'] = 'https:/example.com<strong>/groupname</strong>';
 $string['group'] = 'Group';
 $string['selectgroup'] = 'Select group';
 $string['showall'] = 'Show all';
+$string['groupsstartwith'] = 'Only use groups that start with this character';

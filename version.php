@@ -25,6 +25,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2017123000;
+$plugin->version   = 2018012300;
 $plugin->requires  = 2013051400;
 $plugin->component = 'block_class_schedule';

@@ -28,18 +28,34 @@ defined('MOODLE_INTERNAL') || die();
 function block_class_schedule_get_user_groups($userid, $courseid) {
     global $DB;
 
+    $params = array();
+    $params['courseid'] = $courseid;
+    $params['userid'] = $userid;
+
+    $insql = '';
+
+    if ($groupsstartwith = get_config('block_class_schedule', 'groupsstartwith')) {
+        $insql = ' AND '.$DB->sql_like('g.name', ':startswith', false, false);
+        $params['startswith'] = $DB->sql_like_escape($groupsstartwith).'%';
+    }
+
     if (has_capability('moodle/course:managegroups', context_course::instance($courseid))) {
-        return $DB->get_records('groups', array('courseid' => $courseid));
+        $sql = "SELECT g.*
+                  FROM {groups} g
+                 WHERE g.courseid = :courseid
+                       $insql";
+        return $DB->get_records_sql($sql, $params);
     }
 
     $sql = "SELECT g.*
               FROM {groups} g
               JOIN {groups_members} m
                 ON g.id = m.groupid
-             WHERE g.courseid = ?
-               AND m.userid = ?";
+             WHERE g.courseid = :courseid
+               AND m.userid = :userid
+                   $insql";
 
-    return $DB->get_records_sql($sql, array($courseid, $userid));
+    return $DB->get_records_sql($sql, $params);
 }
 
 function block_class_schedule_get_group_members_role($roleid, $groupid, $courseid) {
